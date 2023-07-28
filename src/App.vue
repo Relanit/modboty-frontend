@@ -14,7 +14,18 @@ import HeaderComponent from "@/components/HeaderComponent.vue"; // @ is an alias
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #e3e3e3;
-  background-color: #1a1a1a;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
 }
 
 a,

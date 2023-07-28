@@ -1,9 +1,8 @@
 <template>
-  <head></head>
-  <body>
+  <div class="auth-container">
     <FirstContainer :msg="result" />
     <div class="second"></div>
-  </body>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -32,9 +31,9 @@ switch (result) {
 </script>
 
 <style scoped>
-body {
-  margin: 0px;
+.auth-container {
   text-align: center;
+  position: relative;
   color: #e3e3e3;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

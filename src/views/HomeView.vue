@@ -1,17 +1,46 @@
 <script setup lang="ts">
+import ExampleContainer from "@/components/ExampleContainer.vue";
 import FirstContainer from "@/components/FirstContainer.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+import StreamersCarousel from "@/components/StreamersCarousel.vue";
 </script>
 
 <template>
   <div class="home">
-    <FirstContainer msg="Добро пожаловать в ModBoty" />
-    <div class="second"></div>
+    <FirstContainer msg="Чат-бот для модерации и управления 7TV" :home="true" />
+    <ExampleContainer
+      :dark="true"
+      title="Пользовательские команды"
+      text="Добавляйте команды с указанным текстом;<br>Создавайте таймеры для автоматической отправки команд;<br> Используйте переменные для создания интерактивных команд"
+      img="img/commands.gif"
+    />
+    <ExampleContainer
+      :dark="false"
+      title="Управление смайлами"
+      text="Добавляйте, удаляйте, переименовывайте смайлы; <br/> Меняйте и копируйте наборы 7TV; <br/>Управляйте редакторами 7TV"
+      img="img/7tv.gif"
+    />
+    <ExampleContainer
+      :dark="true"
+      title="Управление випами"
+      text="Позвольте выбранным модераторам управлять випами, с возможностью выдачи випа на указанный срок"
+      img="img/vips.gif"
+    />
+    <ExampleContainer
+      :dark="false"
+      title="Настройки стрима"
+      text="Легко меняйте название и категорию стрима;<br>Создайте элиасы, чтобы менять категорию в два клика"
+      img="img/streaminfo.gif"
+    />
+    <ExampleContainer
+      :dark="true"
+      title="А также управление ставками, банфразы и <a href='https://docs.modbot.xyz'>многое другое</a>"
+      img="img/predictions.gif"
+    />
   </div>
+
+  <StreamersCarousel />
+  <FooterComponent />
 </template>
 
-<style>
-.second {
-  background-color: #1a1a1a;
-  height: calc(60vh - 60px);
-}
-</style>
+<style scoped></style>
