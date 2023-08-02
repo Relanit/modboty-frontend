@@ -1,34 +1,29 @@
+<script setup lang="ts">
+import AuthContainer from "@/components/AuthContainer.vue";
+import FirstContainer from "@/components/FirstContainer.vue";
+import { ref } from "vue";
+let authText = ref("Авторизация");
+
+let dots = 0;
+setInterval(() => {
+  authText.value = "Авторизация" + ".".repeat(dots);
+  dots = (dots + 1) % 4;
+}, 300);
+</script>
+
 <template>
   <div class="auth-container">
-    <FirstContainer :msg="result" />
+    <Suspense>
+      <template #default>
+        <AuthContainer />
+      </template>
+      <template #fallback>
+        <FirstContainer :msg="authText" />
+      </template>
+    </Suspense>
     <div class="second"></div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useRoute } from "vue-router";
-import FirstContainer from "@/components/FirstContainer.vue";
-
-const route = useRoute();
-let result = route.query.result?.toString() || "3";
-switch (result) {
-  case "1":
-    result = "Авторизация прошла успешно";
-    break;
-  case "2":
-    result = "Ошибка: неверный код";
-    break;
-  case "3":
-    result = "Ошибка авторизации, <a href='test_link'>попробуйте ещё раз</a>";
-    break;
-  case "4":
-    result = "Ошибка: неверные разрешения";
-    break;
-  case "5":
-    result = "Ошибка: бот не подключён к каналу";
-    break;
-}
-</script>
 
 <style scoped>
 .auth-container {

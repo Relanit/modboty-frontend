@@ -9,6 +9,9 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
     meta: {
       title: "Главная | ModBoty",
+      description:
+        "ModBoty ‒ это модераторский бот для Twitch c возможностью добавления пользовательских команд, управления 7TV смайлами и с многими другими функциями для модерации чата",
+      keywords: "Twitch, бот, модератор, модерация, 7тв, 7tv, команды, чат",
     },
   },
   // {
@@ -26,6 +29,8 @@ const routes: Array<RouteRecordRaw> = [
     component: AuthViewVue,
     meta: {
       title: "Авторизация | ModBoty",
+      description:
+        "Получение доступа к дополнительным функциям ModBoty, модераторского бота для Twitch",
     },
   },
 ];
