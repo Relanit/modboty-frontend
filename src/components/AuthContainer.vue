@@ -27,7 +27,7 @@ if (!(code && scope)) {
         },
       }
     )
-    .then((response) => response.data)
+    .then((response) => response.data["result"])
     .catch((error: unknown) => console.error(error));
 }
 
