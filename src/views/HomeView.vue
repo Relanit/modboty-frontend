@@ -37,9 +37,13 @@ import StreamersCarousel from "@/components/StreamersCarousel.vue";
       title="А также управление ставками, банфразы и <a href='https://docs.modbot.xyz'>многое другое</a>"
       img="img/predictions.gif"
     />
+    <Suspense>
+      <template #default>
+        <StreamersCarousel />
+      </template>
+      <template #fallback>modcheck</template>
+    </Suspense>
   </div>
-
-  <StreamersCarousel />
   <FooterComponent />
 </template>
 

@@ -1,11 +1,37 @@
 <script setup lang="ts">
 import { register } from "swiper/element/bundle";
 import StreamerCard from "./StreamerCard.vue";
+import axios from "axios";
 register();
+
+const streamers = await axios
+  .get("http://localhost:5000/top_streamers")
+  .then((response) => {
+    return response.data;
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+const total_channels = await axios
+  .get("http://localhost:5000/total_channels")
+  .then((response) => {
+    return response.data;
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+streamers.forEach((streamer) => {
+  streamer["followers"] = streamer["followers"].toLocaleString("ru-RU");
+});
+
+const total_channels_label = `${total_channels} подключённых каналов`;
 </script>
 
 <template>
   <h2 class="carousel-header">Кто использует ModBoty?</h2>
+  <h5 v-text="total_channels_label"></h5>
   <div class="carousel">
     <div class="carousel-wrapper">
       <div class="swiper-button-prev-wrapper">
@@ -46,16 +72,15 @@ register();
           prevEl: '.swiper-button-prev',
         }"
         :pagination="true"
+        :allow-touch-move="false"
       >
-        <swiper-slide>
+        <swiper-slide v-for="streamer in streamers" :key="streamer.name">
           <StreamerCard
-            img="vova.png"
-            name="bratishkinoff"
-            :followers="2500000"
+            :img="streamer.profile_image"
+            :name="streamer.name"
+            :followers="streamer.followers"
           />
         </swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
       </swiper-container>
 
       <div class="swiper-button-next-wrapper">
@@ -122,7 +147,7 @@ swiper-container {
   }
 }
 
-swiper-slide:not(.swiper-slide-next) {
+swiper-slide {
   height: 270px;
   align-items: center;
   display: flex;
