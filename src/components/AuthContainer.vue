@@ -30,7 +30,8 @@ if (!(code && scope)) {
     .then((response) => response.data["status"])
     .catch((error) =>
       error["response"]["data"]["detail"]["error_code"].toString()
-    );
+    )
+    .catch((error) => error);
 }
 
 switch (result.value) {
@@ -41,10 +42,10 @@ switch (result.value) {
     result.value = `Ошибка авторизации, <a href='${authLink}'>попробуйте ещё раз</a>`;
     break;
   case "2":
-    result.value = "Ошибка: неверные разрешения";
-    break;
-  case "3":
     result.value = "Ошибка: бот не подключён к каналу";
+    break;
+  default:
+    result.value = `Произошла неизвестная ошибка: ${result.value}`;
     break;
 }
 </script>
