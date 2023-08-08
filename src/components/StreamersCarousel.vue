@@ -22,7 +22,13 @@ const total_channels = await axios
     console.log(error);
   });
 
-streamers.forEach((streamer) => {
+type Streamer = {
+  profile_image: string;
+  name: string;
+  followers: number | string;
+};
+
+streamers.forEach((streamer: Streamer) => {
   streamer["followers"] = streamer["followers"].toLocaleString("ru-RU");
 });
 

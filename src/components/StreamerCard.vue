@@ -4,7 +4,7 @@ import { defineProps } from "vue";
 const props = defineProps({
   img: String,
   name: String,
-  followers: Number,
+  followers: String,
 });
 </script>
 

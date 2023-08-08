@@ -27,21 +27,23 @@ if (!(code && scope)) {
         },
       }
     )
-    .then((response) => response.data)
-    .catch((error: unknown) => console.error(error));
+    .then((response) => response.data["status"])
+    .catch((error) =>
+      error["response"]["data"]["detail"]["error_code"].toString()
+    );
 }
 
 switch (result.value) {
-  case "1":
+  case "success":
     result.value = "Авторизация прошла успешно";
     break;
-  case "2":
+  case "1":
     result.value = `Ошибка авторизации, <a href='${authLink}'>попробуйте ещё раз</a>`;
     break;
-  case "3":
+  case "2":
     result.value = "Ошибка: неверные разрешения";
     break;
-  case "4":
+  case "3":
     result.value = "Ошибка: бот не подключён к каналу";
     break;
 }

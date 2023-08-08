@@ -86,7 +86,7 @@ body {
 .show,
 .collapsing {
   margin-left: -13px;
-  min-width: calc(100vw - 16px);
+  min-width: 100vw;
   background-color: #1a1a1a;
   margin-top: 9px;
   border-bottom-left-radius: 10px;

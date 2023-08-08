@@ -7,7 +7,7 @@ import StreamersCarousel from "@/components/StreamersCarousel.vue";
 
 <template>
   <div class="home">
-    <FirstContainer msg="Чат-бот для модерации и управления 7TV" :home="true" />
+    <FirstContainer msg="Бот для модерации и управления 7TV" :home="true" />
     <ExampleContainer
       :dark="true"
       title="Пользовательские команды"
@@ -41,7 +41,7 @@ import StreamersCarousel from "@/components/StreamersCarousel.vue";
       <template #default>
         <StreamersCarousel />
       </template>
-      <template #fallback>modcheck</template>
+      <template #fallback>Загрузка стримеров...</template>
     </Suspense>
   </div>
   <FooterComponent />
