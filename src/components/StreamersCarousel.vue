@@ -5,7 +5,7 @@ import axios from "axios";
 register();
 
 const streamers = await axios
-  .get("http://localhost:5000/top_streamers")
+  .get("https://api.modbot.xyz/top_streamers")
   .then((response) => {
     return response.data;
   })
@@ -14,7 +14,7 @@ const streamers = await axios
   });
 
 const total_channels = await axios
-  .get("http://localhost:5000/total_channels")
+  .get("https://api.modbot.xyz/total_channels")
   .then((response) => {
     return response.data;
   })

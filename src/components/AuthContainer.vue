@@ -18,7 +18,7 @@ if (!(code && scope)) {
 } else {
   result.value = await axios
     .post(
-      "http://localhost:5000/auth",
+      "https://api.modbot.xyz/auth",
       {},
       {
         params: {
