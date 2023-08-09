@@ -11,7 +11,7 @@ let scope = route.query.scope;
 let result = ref("Авторизация...");
 
 const authLink =
-  "https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=xiudfd2nsod7a4kukl5bluhjt5wedo&redirect_uri=http://localhost:8080/auth&scope=channel:read:subscriptions+moderation:read+channel:manage:broadcast+channel:manage:polls+channel:manage:predictions+channel:read:polls+channel:read:predictions+channel:read:vips+channel:manage:vips&force_verify=true";
+  "https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=xiudfd2nsod7a4kukl5bluhjt5wedo&redirect_uri=https://modbot.xyz/auth&scope=channel:read:subscriptions+moderation:read+channel:manage:broadcast+channel:manage:polls+channel:manage:predictions+channel:read:polls+channel:read:predictions+channel:read:vips+channel:manage:vips&force_verify=true";
 
 if (!(code && scope)) {
   window.location.href = authLink;
