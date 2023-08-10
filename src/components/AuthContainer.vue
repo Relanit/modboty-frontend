@@ -44,6 +44,9 @@ switch (result.value) {
   case "2":
     result.value = "Ошибка: бот не подключён к каналу";
     break;
+  case "Авторизация...":
+    result.value = "Авторизация...";
+    break;
   default:
     result.value = `Произошла неизвестная ошибка: ${result.value}`;
     break;
