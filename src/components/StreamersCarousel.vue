@@ -4,17 +4,8 @@ import StreamerCard from "./StreamerCard.vue";
 import axios from "axios";
 register();
 
-const streamers = await axios
-  .get("https://api.modbot.xyz/top_streamers")
-  .then((response) => {
-    return response.data;
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-const total_channels = await axios
-  .get("https://api.modbot.xyz/total_channels")
+const channelsData = await axios
+  .get("http://localhost:5000/channels")
   .then((response) => {
     return response.data;
   })
@@ -28,11 +19,11 @@ type Streamer = {
   followers: number | string;
 };
 
-streamers.forEach((streamer: Streamer) => {
+channelsData.topChannels.forEach((streamer: Streamer) => {
   streamer["followers"] = streamer["followers"].toLocaleString("ru-RU");
 });
 
-const total_channels_label = `${total_channels} подключённых каналов`;
+const total_channels_label = `${channelsData.channelCount} подключённых каналов`;
 </script>
 
 <template>
@@ -80,7 +71,10 @@ const total_channels_label = `${total_channels} подключённых кан�
         :pagination="true"
         :allow-touch-move="false"
       >
-        <swiper-slide v-for="streamer in streamers" :key="streamer.name">
+        <swiper-slide
+          v-for="streamer in channelsData.topChannels"
+          :key="streamer.name"
+        >
           <StreamerCard
             :img="streamer.profile_image"
             :name="streamer.name"

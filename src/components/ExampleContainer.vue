@@ -53,11 +53,8 @@ const props = defineProps({
 
 .container__content__image {
   border-radius: 10px;
-  max-width: 90vw;
-}
-
-.container__content__image {
   box-shadow: rgb(12, 12, 12) 0px 1px 7px 0px;
+  max-width: 90vw;
 }
 
 .container__content__description {
