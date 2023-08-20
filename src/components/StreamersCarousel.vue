@@ -5,7 +5,7 @@ import axios from "axios";
 register();
 
 const channelsData = await axios
-  .get("http://localhost:5000/channels")
+  .get("http://api.modbot.xyz/channels")
   .then((response) => {
     return response.data;
   })
