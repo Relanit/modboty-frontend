@@ -1,10 +1,10 @@
 <template>
-  <HeaderComponent />
+  <TheHeading />
   <router-view />
 </template>
 
 <script setup lang="ts">
-import HeaderComponent from "@/components/HeaderComponent.vue"; // @ is an alias to /src
+import TheHeading from "@/components/TheHeading.vue"; // @ is an alias to /src
 </script>
 
 <style lang="scss">

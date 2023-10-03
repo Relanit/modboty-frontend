@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import {
+  CNavbar,
+  CNavbarBrand,
+  CNavbarToggler,
+  CCollapse,
+  CNavbarNav,
+  CNavItem,
+  CContainer,
+  CNavLink,
+} from "@coreui/vue";
+import "@coreui/coreui/dist/css/coreui.min.css";
+import LoginButton from "@/components/LoginButton.vue";
+import { ref } from "vue";
+
+const visible = ref(false);
+</script>
+
 <template>
   <CNavbar expand="lg" color-scheme="dark" color="dark" class="navbar">
     <CContainer fluid>
@@ -16,29 +34,16 @@
               Поддержать разработчика
             </CNavLink>
           </CNavItem>
+          <CNavItem>
+            <CNavLink>
+              <LoginButton />
+            </CNavLink>
+          </CNavItem>
         </CNavbarNav>
       </CCollapse>
     </CContainer>
   </CNavbar>
 </template>
-
-<script setup lang="ts">
-import {
-  CNavbar,
-  CNavbarBrand,
-  CNavbarToggler,
-  CCollapse,
-  CNavbarNav,
-  CNavItem,
-  CContainer,
-  CNavLink,
-} from "@coreui/vue";
-import "@coreui/coreui/dist/css/coreui.min.css";
-
-import { ref } from "vue";
-
-const visible = ref(false);
-</script>
 
 <style lang="scss">
 body {
@@ -93,5 +98,12 @@ body {
   border-bottom-right-radius: 10px;
   box-shadow: 0 1px 2px 1px #0000001a;
   border-width: 1px;
+}
+
+.navbar-collapse:not(.show):not(.collapsing) {
+  ul .nav-item {
+    display: flex;
+    align-items: center;
+  }
 }
 </style>

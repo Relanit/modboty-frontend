@@ -2,10 +2,11 @@
 import { register } from "swiper/element/bundle";
 import StreamerCard from "./StreamerCard.vue";
 import axios from "axios";
+import config from "src/config.json";
 register();
 
 const channelsData = await axios
-  .get("https://api.modbot.xyz/channels")
+  .get(`${config.API}/channels`)
   .then((response) => {
     return response.data;
   })

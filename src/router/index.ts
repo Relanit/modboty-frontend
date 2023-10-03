@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AuthViewVue from "../views/AuthView.vue";
-import NotFoundView from "@/components/NotFoundView.vue";
+import NotFoundView from "@/views/NotFoundView.vue";
+import OAuthCallbackViewVue from "@/views/OAuthCallbackView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -15,15 +16,6 @@ const routes: Array<RouteRecordRaw> = [
       keywords: "Twitch, бот, модератор, модерация, 7тв, 7tv, команды, чат",
     },
   },
-  // {
-  //   path: "/about",
-  //   name: "about",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  // },
   {
     path: "/auth",
     name: "auth",
@@ -32,6 +24,14 @@ const routes: Array<RouteRecordRaw> = [
       title: "Авторизация | ModBoty",
       description:
         "Получение доступа к дополнительным функциям ModBoty, модераторского бота для Twitch",
+    },
+  },
+  {
+    path: "/oauth/twitch/callback",
+    name: "twitch-oauth",
+    component: OAuthCallbackViewVue,
+    meta: {
+      title: "Авторизация | ModBoty",
     },
   },
   {

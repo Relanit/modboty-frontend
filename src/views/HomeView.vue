@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ExampleContainer from "@/components/ExampleContainer.vue";
 import FirstContainer from "@/components/FirstContainer.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+import TheFooter from "@/components/TheFooter.vue";
 import StreamersCarousel from "@/components/StreamersCarousel.vue";
 </script>
 
@@ -44,7 +44,7 @@ import StreamersCarousel from "@/components/StreamersCarousel.vue";
       <template #fallback>Загрузка стримеров...</template>
     </Suspense>
   </div>
-  <FooterComponent />
+  <TheFooter />
 </template>
 
 <style scoped></style>

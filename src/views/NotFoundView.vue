@@ -9,11 +9,13 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .not-found {
+  background-color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: calc(100vh - 60px);
+  padding-bottom: 20%;
 }
 </style>
