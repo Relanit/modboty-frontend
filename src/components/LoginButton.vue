@@ -17,8 +17,8 @@ function getOAuth2URL() {
     });
 }
 
+const $cookies = inject<VueCookies>("$cookies");
 async function loginTwitch() {
-  const $cookies = inject<VueCookies>("$cookies");
   if (!$cookies) {
     return console.error("Failed to inject $cookies");
   }

@@ -10,7 +10,8 @@ const route = useRoute();
 let code = route.query.code;
 let state = route.query.state;
 
-let result = ref("Авторизация...");
+let message = ref("Авторизация...");
+let result = ref();
 
 const $cookies = inject<VueCookies>("$cookies");
 
@@ -31,7 +32,7 @@ async function twitchOAuth2() {
       { code: code, state: state },
       { withCredentials: true }
     )
-    .then((response) => response.data["status"])
+    .then((response) => response.data["success"])
     .catch((error) => error["response"]["data"]["detail"])
     .catch((error) => error);
 }
@@ -42,28 +43,29 @@ if (code !== undefined && state !== undefined) {
   result.value = `1`;
 }
 
+console.log(result.value);
 switch (result.value) {
-  case "success":
-    result.value = "Авторизация прошла успешно";
+  case true:
+    message.value = "Авторизация прошла успешно";
+    break;
+  case undefined:
+    message.value = "Вы вошли";
     break;
   case "1":
-    result.value = `Ошибка, попробуйте ещё раз`;
+    message.value = `Ошибка, попробуйте ещё раз`;
     break;
   case "2":
-    result.value = "Ошибка: бот не подключён к каналу";
-    break;
-  case "Авторизация...":
-    result.value = "Авторизация...";
+    message.value = "Ошибка: бот не подключён к каналу";
     break;
   default:
-    result.value = `Произошла неизвестная ошибка: ${result.value}`;
+    message.value = `Произошла неизвестная ошибка: ${result.value}`;
     break;
 }
 </script>
 
 <template>
   <div>
-    <h1 v-html="result"></h1>
+    <h1 v-html="message"></h1>
     <img src="/img/ppStretch.gif" alt="ppStretch" />
   </div>
 </template>
