@@ -1,39 +1,30 @@
 <script setup lang="ts">
+import { useCookie } from "vue-cookie-next";
 import axios from "axios";
-import { inject } from "vue";
-import { VueCookies } from "vue-cookies";
-import config from "src/config.json";
 
 function getOAuth2URL() {
-  return axios
-    .get(`${config.API}/oauth/url`, {
-      withCredentials: true,
-    })
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    return axios
+        .get(`${import.meta.env.VITE_APP_API}/oauth/url`, {
+            withCredentials: true,
+        })
+        .then((response) => {
+            return response.data;
+        });
 }
 
 async function authorizeTwitch() {
-  const response = await getOAuth2URL();
-  const url = response["authorization_url"];
-  window.location.href = url;
+    const response = await getOAuth2URL();
+    const url = response["authorization_url"];
+    window.location.href = url;
 }
 
-const $cookies = inject<VueCookies>("$cookies");
-if ($cookies) {
-  $cookies.set("intent", "authorize");
-  await authorizeTwitch();
-} else {
-  console.error("Failed to inject $cookies");
-}
+const cookie = useCookie();
+cookie.setCookie("intent", "authorize");
+await authorizeTwitch();
 </script>
 
 <template>
-  <div></div>
+    <div></div>
 </template>
 
 <style scoped></style>

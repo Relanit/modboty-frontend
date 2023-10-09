@@ -1,0 +1,21 @@
+{
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 120,
+    "importOrder": [
+        "^vue",
+        "^@vue(.*)$",
+        "^@(/?)store(.*)$",
+        "^@(/?)router(.*)$",
+        "^@(/?)views(.*)$",
+        "^@(/?)components(.*)$",
+        "^./(.*)$",
+        "<THIRD_PARTY_MODULES>"
+    ],
+    "importOrderGroupNamespaceSpecifiers": true,
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true
+}
