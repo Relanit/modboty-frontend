@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang="ts">
-import TheHeading from "@/components/TheHeading.vue";
+import TheHeading from "@components/TheHeading.vue";
 
 // @ is an alias to /src
 </script>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import OAuthContainer from "@/components/OAuthContainer.vue";
+import OAuthContainer from "@components/OAuthContainer.vue";
 
 const authText = ref("Авторизация");
 
@@ -20,7 +20,7 @@ setInterval(() => {
             <template #fallback>
                 <div>
                     <h1>{{ authText }}</h1>
-                    <img class="ppCircle" src="/img/ppCircle.gif" alt="ppCircle" />
+                    <img class="ppCircle" src="@img/ppCircle.gif" alt="ppCircle" />
                 </div>
             </template>
         </Suspense>

@@ -4,7 +4,6 @@
         "module": "esnext",
         "strict": true,
         "jsx": "preserve",
-        "importHelpers": true,
         "moduleResolution": "node",
         "skipLibCheck": true,
         "esModuleInterop": true,
@@ -12,6 +11,7 @@
         "forceConsistentCasingInFileNames": true,
         "useDefineForClassFields": true,
         "resolveJsonModule": true,
+        "isolatedModules": true,
         "sourceMap": true,
         "baseUrl": ".",
         "types": ["vite/client"],
@@ -19,12 +19,13 @@
             "@/*": ["src/*"],
             "@store/*": ["src/store/*"],
             "@components/*": ["src/components/*"],
+            "@img/*": ["src/assets/img/*"],
             "@views/*": ["src/views/*"]
         },
-        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+        "lib": ["esnext", "dom", "webworker"]
     },
     "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules", "dist"],
     "references": [
         {
             "path": "./tsconfig.node.json"

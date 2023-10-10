@@ -59,6 +59,6 @@ switch (result.value) {
 <template>
     <div>
         <h1>{{ message }}</h1>
-        <img src="/img/ppStretch.gif" alt="ppStretch" />
+        <img src="@img/ppStretch.gif" alt="ppStretch" />
     </div>
 </template>

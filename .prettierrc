@@ -13,6 +13,7 @@
         "^@(/?)router(.*)$",
         "^@(/?)views(.*)$",
         "^@(/?)components(.*)$",
+        "^@(/?)assets(.*)$",
         "^./(.*)$",
         "<THIRD_PARTY_MODULES>"
     ],
