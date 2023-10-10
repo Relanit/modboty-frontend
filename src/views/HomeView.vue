@@ -41,7 +41,7 @@ import TheFooter from "@/components/TheFooter.vue";
             <template #default>
                 <StreamersCarousel />
             </template>
-            <template #fallback>Загрузка стримеров...</template>
+            <template #fallback>Получение стримеров...</template>
         </Suspense>
     </div>
     <TheFooter />

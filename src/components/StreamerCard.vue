@@ -18,41 +18,43 @@ const props = defineProps({
     </div>
 </template>
 
-<style>
+<style scoped lang="scss">
 .streamer-card {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-}
 
-.streamer-card__img {
-    border-radius: 50%;
-    margin-right: 30px;
-    width: 150px;
-    box-shadow: rgb(12, 12, 12) 0px 0px 7px 1px;
-}
+    .streamer-card__img {
+        border-radius: 50%;
+        margin-right: 30px;
+        width: 150px;
+        box-shadow: rgb(12, 12, 12) 0px 0px 7px 1px;
+        user-select: none;
+    }
 
-.streamer-card__description__name {
-    font-size: 30px;
-    overflow-wrap: break-word;
-    max-width: 250px;
-}
+    .streamer-card__description {
+        .streamer-card__description__name {
+            font-size: 30px;
+            overflow-wrap: break-word;
+            max-width: 250px;
+        }
 
-.streamer-card__description__followers {
-    font-size: 24px;
+        .streamer-card__description__followers {
+            font-size: 24px;
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
     .streamer-card {
         flex-direction: column;
         line-height: 25px;
-    }
 
-    .streamer-card__img {
-        width: 120px;
-        margin-right: 0px;
-        margin-bottom: 10px;
+        .streamer-card__img {
+            width: 120px;
+            margin-right: 0px;
+            margin-bottom: 10px;
+        }
     }
 }
 </style>
