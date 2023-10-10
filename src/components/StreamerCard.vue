@@ -10,10 +10,10 @@ const props = defineProps({
 
 <template>
     <div class="streamer-card">
-        <img :src="props.img" class="streamer-card__img" />
+        <img :src="props.img" class="streamer-card__avatar" />
         <div class="streamer-card__description">
-            <p class="streamer-card__description__name">{{ props.name }}</p>
-            <p class="streamer-card__description__followers">{{ props.followers }}</p>
+            <p class="streamer-card__name">{{ props.name }}</p>
+            <p class="streamer-card__followers">{{ props.followers }}</p>
         </div>
     </div>
 </template>
@@ -24,7 +24,7 @@ const props = defineProps({
     justify-content: center;
     align-items: center;
 
-    .streamer-card__img {
+    &__avatar {
         border-radius: 50%;
         margin-right: 30px;
         width: 150px;
@@ -32,16 +32,14 @@ const props = defineProps({
         user-select: none;
     }
 
-    .streamer-card__description {
-        .streamer-card__description__name {
-            font-size: 30px;
-            overflow-wrap: break-word;
-            max-width: 250px;
-        }
+    &__name {
+        font-size: 30px;
+        overflow-wrap: break-word;
+        max-width: 250px;
+    }
 
-        .streamer-card__description__followers {
-            font-size: 24px;
-        }
+    &__followers {
+        font-size: 24px;
     }
 }
 
@@ -50,7 +48,7 @@ const props = defineProps({
         flex-direction: column;
         line-height: 25px;
 
-        .streamer-card__img {
+        &__avatar {
             width: 120px;
             margin-right: 0px;
             margin-bottom: 10px;

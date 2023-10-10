@@ -20,15 +20,30 @@ channelsData.topChannels.forEach((streamer: Streamer) => {
     streamer["followers"] = streamer["followers"].toLocaleString("ru-RU");
 });
 
-const total_channels_label = `${channelsData.channelCount} подключённых каналов`;
+function formatChannels(n: number): string {
+    const lastDigit = n % 10;
+    const lastTwoDigits = n % 100;
+
+    if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+        return `${n} подключённых каналов`;
+    } else if (lastDigit === 1) {
+        return `${n} подключённый канал`;
+    } else if (lastDigit >= 2 && lastDigit <= 4) {
+        return `${n} подключённых канала`;
+    } else {
+        return `${n} подключённых каналов`;
+    }
+}
+
+const totalChannels = formatChannels(channelsData.channelCount);
 </script>
 
 <template>
     <h2 class="carousel-header">Кто использует ModBoty?</h2>
-    <h5>{{ total_channels_label }}</h5>
+    <h5>{{ totalChannels }}</h5>
     <div class="carousel">
-        <div class="carousel-wrapper">
-            <div class="swiper-button-prev">
+        <div class="carousel__wrapper">
+            <div class="carousel__swiper-button-prev">
                 <Icon icon="circle-chevron-left" lib="fas" />
             </div>
 
@@ -39,8 +54,8 @@ const total_channels_label = `${channelsData.channelCount} подключённ�
                     delay: 5000,
                 }"
                 :navigation="{
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.carousel__swiper-button-next',
+                    prevEl: '.carousel__swiper-button-prev',
                 }"
                 :pagination="true"
                 :allow-touch-move="false"
@@ -50,7 +65,7 @@ const total_channels_label = `${channelsData.channelCount} подключённ�
                 </swiper-slide>
             </swiper-container>
 
-            <div class="swiper-button-next">
+            <div class="carousel__swiper-button-next">
                 <Icon icon="circle-chevron-right" lib="fas" />
             </div>
         </div>
@@ -68,7 +83,7 @@ const total_channels_label = `${channelsData.channelCount} подключённ�
     height: 250px;
     margin-bottom: 50px;
 
-    .carousel-wrapper {
+    &__wrapper {
         display: flex;
         align-items: center;
 
@@ -93,35 +108,35 @@ const total_channels_label = `${channelsData.channelCount} подключённ�
                 justify-content: center;
             }
         }
+    }
 
-        .swiper-button-next,
-        .swiper-button-prev {
-            width: 50px;
-            user-select: none;
+    &__swiper-button-next,
+    &__swiper-button-prev {
+        width: 50px;
+        user-select: none;
 
-            svg {
-                color: #242424;
-                font-size: 2.4em;
-                transition: all 0.4s, width 0.1s;
-                background-color: white;
-                border: 3px solid white;
-                border-radius: 50%;
+        svg {
+            color: #242424;
+            font-size: 2.4em;
+            transition: all 0.4s, width 0.1s;
+            background-color: white;
+            border: 3px solid white;
+            border-radius: 50%;
 
-                &:hover {
-                    color: #858585;
-                    background-color: #333;
-                    border-color: #333;
-                }
-
-                &:active {
-                    font-size: 1.6em;
-                }
+            &:hover {
+                color: #858585;
+                background-color: #333;
+                border-color: #333;
             }
 
-            @media screen and (max-width: 500px) {
-                svg {
-                    font-size: 2em;
-                }
+            &:active {
+                font-size: 1.6em;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            svg {
+                font-size: 2em;
             }
         }
     }

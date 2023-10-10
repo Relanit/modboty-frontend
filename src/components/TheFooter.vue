@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
 
 <template>
     <footer>
-        <div class="footer__socials">
+        <div class="socials">
             <a href="https://t.me/modboty" target="_blank">
                 <Icon icon="telegram" lib="fab" />
             </a>
@@ -27,7 +27,7 @@ const currentYear = new Date().getFullYear();
     </footer>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 footer {
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ footer {
     gap: 30px;
     padding: 30px;
 
-    .footer__socials {
+    .socials {
         display: flex;
         gap: 30px;
         flex-wrap: wrap;
@@ -47,10 +47,10 @@ footer {
             color: #e3e3e3;
             font-size: 1.5em;
             transition: color 0.4s ease;
-        }
 
-        svg:hover {
-            color: #858585;
+            &:hover {
+                color: #858585;
+            }
         }
     }
 }
