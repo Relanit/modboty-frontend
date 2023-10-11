@@ -22,9 +22,3 @@ const cookie = useCookie();
 cookie.setCookie("intent", "authorize");
 await authorizeTwitch();
 </script>
-
-<template>
-    <div></div>
-</template>
-
-<style scoped></style>

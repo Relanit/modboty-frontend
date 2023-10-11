@@ -54,54 +54,54 @@ body {
     box-shadow: 0 1px 2px 0 #0000001a;
     margin-top: 4px;
     height: 56px;
-}
 
-.navbar-toggler:active {
-    background-color: #1a1a1a;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-.navbar-toggler {
-    transition: background-color 0.2s;
-}
-
-.brand {
-    background: url("../assets/logo1.svg") no-repeat;
-    background-size: contain;
-    width: 133px;
-    height: 40px;
-    background-position: 2px 4px;
-}
-
-.nav-link {
-    color: #e3e3e3;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-
-    &:hover {
-        color: #78ba52;
+    .brand {
+        background: url("../assets/logo1.svg") no-repeat;
+        background-size: contain;
+        width: 133px;
+        height: 40px;
+        background-position: 2px 4px;
     }
-}
 
-.show,
-.collapsing {
-    margin-left: -13px;
-    min-width: 100vw;
-    background-color: #1a1a1a;
-    margin-top: 9px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 0 1px 2px 1px #0000001a;
-    border-width: 1px;
-}
+    .navbar-toggler {
+        transition: background-color 0.2s;
 
-.navbar-collapse:not(.show):not(.collapsing) {
-    ul .nav-item {
-        display: flex;
-        align-items: center;
+        &:active {
+            background-color: #1a1a1a;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .navbar-collapse:not(.show):not(.collapsing) {
+        .nav-item {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .show,
+    .collapsing {
+        margin-left: -13px;
+        min-width: 100vw;
+        background-color: #1a1a1a;
+        margin-top: 9px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 1px 2px 1px #0000001a;
+        border-width: 1px;
+    }
+
+    .nav-link {
+        color: #e3e3e3;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+
+        &:hover {
+            color: #78ba52;
+        }
     }
 }
 </style>

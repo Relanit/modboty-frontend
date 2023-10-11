@@ -43,7 +43,7 @@ async function loginTwitch() {
     border: 2px solid #858585;
     transition: all 0.3s;
 
-    & svg {
+    > svg {
         margin-right: 4px;
     }
 

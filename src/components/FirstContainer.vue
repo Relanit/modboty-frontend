@@ -50,7 +50,7 @@ const props = defineProps({
             background-color: #858585;
         }
 
-        & a {
+        > a {
             color: #1a1a1a;
             text-decoration: none;
         }

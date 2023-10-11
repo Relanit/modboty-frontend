@@ -38,12 +38,12 @@ footer {
     gap: 30px;
     padding: 30px;
 
-    .socials {
+    > .socials {
         display: flex;
         gap: 30px;
         flex-wrap: wrap;
 
-        svg {
+        > a svg {
             color: #e3e3e3;
             font-size: 1.5em;
             transition: color 0.4s ease;

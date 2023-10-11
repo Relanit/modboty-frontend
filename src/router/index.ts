@@ -46,6 +46,7 @@ const router = createRouter({
 
 router.afterEach((to) => {
     document.title = to.meta.title as string;
+    // eslint-disable-next-line quotes
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
         metaDescription.setAttribute("content", to.meta.description as string);

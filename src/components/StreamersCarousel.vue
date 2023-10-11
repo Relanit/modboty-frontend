@@ -87,7 +87,7 @@ const totalChannels = formatChannels(channelsData.channelCount);
         display: flex;
         align-items: center;
 
-        swiper-container {
+        > swiper-container {
             width: 450px;
             max-width: 65vw;
 
@@ -102,7 +102,7 @@ const totalChannels = formatChannels(channelsData.channelCount);
                 height: 11px;
             }
 
-            swiper-slide {
+            > swiper-slide {
                 height: 270px;
                 display: flex;
                 justify-content: center;
@@ -115,7 +115,7 @@ const totalChannels = formatChannels(channelsData.channelCount);
         width: 50px;
         user-select: none;
 
-        svg {
+        > svg {
             color: #242424;
             font-size: 2.4em;
             transition: all 0.4s, width 0.1s;
@@ -135,7 +135,7 @@ const totalChannels = formatChannels(channelsData.channelCount);
         }
 
         @media screen and (max-width: 500px) {
-            svg {
+            > svg {
                 font-size: 2em;
             }
         }
