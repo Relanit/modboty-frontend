@@ -28,8 +28,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 a {
-    text-decoration: none;
     color: #78ba52;
+    text-decoration: none;
 
     &:hover {
         color: #78ba52;

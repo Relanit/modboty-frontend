@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import LoginButton from "@/components/LoginButton.vue";
+import LoginButton from "@components/LoginButton.vue";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import {
     CCollapse,
