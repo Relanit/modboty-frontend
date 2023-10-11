@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import ExampleContainer from "@components/ExampleContainer.vue";
 import FirstContainer from "@components/FirstContainer.vue";
+import Footer from "@components/Footer.vue";
 import StreamersCarousel from "@components/StreamersCarousel.vue";
-import TheFooter from "@components/TheFooter.vue";
 import stvSrc from "@img/7tv.gif";
 import commandsSrc from "@img/commands.gif";
 import predictionSrc from "@img/predictions.gif";
@@ -46,8 +46,31 @@ import vipsSrc from "@img/vips.gif";
             <template #default>
                 <StreamersCarousel />
             </template>
-            <template #fallback>Получение стримеров...</template>
+            <template #fallback>
+                <div class="channels-fallback">
+                    <h3>Получение стримеров...</h3>
+                    <img class="ppCircle" src="@img/ppCircle.gif" alt="ppCircle" />
+                </div>
+            </template>
         </Suspense>
     </div>
-    <TheFooter />
+    <Footer />
 </template>
+
+<style scoped lang="scss">
+@import "@scss/constants.scss";
+.channels-fallback {
+    background-color: $secondaryBackgroundColor;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ppCircle {
+    margin-top: 15px;
+    width: 9rem;
+}
+</style>

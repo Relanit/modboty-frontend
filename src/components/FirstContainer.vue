@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
+import Logo from "@base/Logo.vue";
 
 const props = defineProps({
     msg: String,
@@ -10,7 +11,7 @@ const props = defineProps({
 <template>
     <div class="first-container">
         <div class="first-container__content">
-            <div class="first-container__logo"></div>
+            <Logo class="logo" />
             <h2>{{ props.msg }}</h2>
             <button class="first-container__add-button" v-if="props.home">
                 <a href="https://docs.modbot.xyz/install">Добавить бота</a>
@@ -20,27 +21,24 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
+@import "@scss/constants.scss";
+
 .first-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #242424;
+    background-color: $secondaryBackgroundColor;
     height: 40vh;
-    font-size: 1.5rem;
     text-align: center;
 
-    &__logo {
-        background: url("../assets/logo.svg") no-repeat;
-        background-size: contain;
-        margin: auto;
+    .logo {
         width: 300px;
-        min-height: 80px;
     }
 
     &__add-button {
         font-weight: 700;
         font-size: 20px;
-        background-color: #e3e3e3;
+        background-color: $color;
         border-radius: 7px;
         border: none;
         padding: 7px 30px;
@@ -48,17 +46,17 @@ const props = defineProps({
         transition: background-color 0.3s;
 
         &:hover {
-            background-color: #858585;
+            background-color: $colorDarker;
         }
 
         > a {
-            color: #1a1a1a;
+            color: $backgroundColor;
             text-decoration: none;
         }
     }
 
     @media screen and (max-width: 600px) {
-        &__logo {
+        .logo {
             width: 220px;
             min-height: 60px;
         }

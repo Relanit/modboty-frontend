@@ -33,14 +33,15 @@ async function loginTwitch() {
 </template>
 
 <style scoped lang="scss">
+@import "@scss/constants.scss";
 .login-button {
     background-color: rgba($color: #000000, $alpha: 0);
     font-weight: 700;
-    color: #e3e3e3;
+    color: $color;
     border-radius: 7px;
     padding: 4px 10px;
     transition: all 0.3s;
-    border: 2px solid #858585;
+    border: 2px solid $colorDarker;
     transition: all 0.3s;
 
     > svg {
@@ -48,12 +49,12 @@ async function loginTwitch() {
     }
 
     &:hover {
-        background-color: #858585;
-        color: #1a1a1a;
+        background-color: $colorDarker;
+        color: $backgroundColor;
     }
 
     &:active {
-        background-color: #5f5f5f;
+        background-color: $colorDarker;
     }
 }
 </style>

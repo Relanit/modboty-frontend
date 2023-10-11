@@ -16,7 +16,9 @@ export default ({ mode }) => {
             alias: {
                 "@": resolve(__dirname, "src"),
                 "@store": resolve(__dirname, "src/store"),
+                "@scss": resolve(__dirname, "src/assets/scss"),
                 "@components": resolve(__dirname, "src/components"),
+                "@base": resolve(__dirname, "src/components/base"),
                 "@views": resolve(__dirname, "src/views"),
                 "@img": resolve(__dirname, "src/assets/img"),
             },

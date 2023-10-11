@@ -28,12 +28,14 @@ setInterval(() => {
 </template>
 
 <style lang="scss" scoped>
+@import "@scss/constants.scss";
 .oauth_container {
-    background-color: #1a1a1a;
+    background-color: $backgroundColor;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px);
+    text-align: center;
+    height: 100vh;
     padding-bottom: 30%;
 }
 

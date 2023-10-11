@@ -28,15 +28,18 @@ const currentYear = new Date().getFullYear();
 </template>
 
 <style scoped lang="scss">
+@import "@scss/constants.scss";
+
 footer {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #242424;
+    background-color: $secondaryBackgroundColor;
     box-shadow: 0 -1px 2px 0 #0000001a;
-    min-height: 120px;
+    min-height: 156px;
     gap: 30px;
     padding: 30px;
+    justify-content: center;
 
     > .socials {
         display: flex;
@@ -44,12 +47,12 @@ footer {
         flex-wrap: wrap;
 
         > a svg {
-            color: #e3e3e3;
+            color: $color;
             font-size: 1.5em;
             transition: color 0.4s ease;
 
             &:hover {
-                color: #858585;
+                color: $colorDarker;
             }
         }
     }

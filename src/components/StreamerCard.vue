@@ -10,7 +10,7 @@ const props = defineProps({
 
 <template>
     <div class="streamer-card">
-        <img :src="props.img" class="streamer-card__avatar" />
+        <img :src="props.img" class="streamer-card__avatar unselectable" />
         <div class="streamer-card__description">
             <p class="streamer-card__name">{{ props.name }}</p>
             <p class="streamer-card__followers">{{ props.followers }}</p>
@@ -29,7 +29,6 @@ const props = defineProps({
         margin-right: 30px;
         width: 150px;
         box-shadow: rgb(12, 12, 12) 0px 0px 7px 1px;
-        user-select: none;
     }
 
     &__name {

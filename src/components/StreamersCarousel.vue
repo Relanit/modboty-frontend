@@ -39,53 +39,61 @@ const totalChannels = formatChannels(channelsData.channelCount);
 </script>
 
 <template>
-    <h2 class="carousel-header">Кто использует ModBoty?</h2>
-    <h5>{{ totalChannels }}</h5>
-    <div class="carousel">
-        <div class="carousel__wrapper">
-            <div class="carousel__swiper-button-prev">
-                <Icon icon="circle-chevron-left" lib="fas" />
-            </div>
+    <div class="main">
+        <h2 class="carousel-header">Кто использует ModBoty?</h2>
+        <h5>{{ totalChannels }}</h5>
+        <div class="carousel">
+            <div class="carousel__wrapper">
+                <div class="carousel__swiper-button-prev unselectable">
+                    <Icon icon="circle-chevron-left" lib="fas" />
+                </div>
 
-            <swiper-container
-                :slides-per-view="1"
-                :loop="true"
-                :autoplay="{
-                    delay: 5000,
-                }"
-                :navigation="{
-                    nextEl: '.carousel__swiper-button-next',
-                    prevEl: '.carousel__swiper-button-prev',
-                }"
-                :pagination="true"
-                :allow-touch-move="false"
-            >
-                <swiper-slide v-for="streamer in channelsData.topChannels" :key="streamer.name">
-                    <StreamerCard :img="streamer.profile_image" :name="streamer.name" :followers="streamer.followers" />
-                </swiper-slide>
-            </swiper-container>
+                <swiper-container
+                    :slides-per-view="1"
+                    :loop="true"
+                    :autoplay="{
+                        delay: 5000,
+                    }"
+                    :navigation="{
+                        nextEl: '.carousel__swiper-button-next',
+                        prevEl: '.carousel__swiper-button-prev',
+                    }"
+                    :pagination="true"
+                    :allow-touch-move="false"
+                >
+                    <swiper-slide v-for="streamer in channelsData.topChannels" :key="streamer.name">
+                        <StreamerCard
+                            :img="streamer.profile_image"
+                            :name="streamer.name"
+                            :followers="streamer.followers"
+                        />
+                    </swiper-slide>
+                </swiper-container>
 
-            <div class="carousel__swiper-button-next">
-                <Icon icon="circle-chevron-right" lib="fas" />
+                <div class="carousel__swiper-button-next unselectable">
+                    <Icon icon="circle-chevron-right" lib="fas" />
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
+@import "@scss/constants.scss";
+
 * {
     text-align: center;
 }
 
-.carousel-header {
-    margin-top: 50px;
+.main {
+    background-color: $secondaryBackgroundColor;
+    padding: 50px 0;
 }
 
 .carousel {
     display: flex;
     justify-content: center;
     height: 250px;
-    margin-bottom: 50px;
 
     &__wrapper {
         display: flex;
@@ -96,7 +104,7 @@ const totalChannels = formatChannels(channelsData.channelCount);
             max-width: 65vw;
 
             &::part(bullet-active) {
-                background-color: #e3e3e3;
+                background-color: $color;
                 width: 11px;
                 height: 11px;
             }
@@ -117,10 +125,9 @@ const totalChannels = formatChannels(channelsData.channelCount);
     &__swiper-button-next,
     &__swiper-button-prev {
         width: 50px;
-        user-select: none;
 
         > svg {
-            color: #242424;
+            color: $secondaryBackgroundColor;
             font-size: 2.4em;
             transition: all 0.4s, width 0.1s;
             background-color: white;
@@ -128,7 +135,7 @@ const totalChannels = formatChannels(channelsData.channelCount);
             border-radius: 50%;
 
             &:hover {
-                color: #858585;
+                color: $colorDarker;
                 background-color: #333;
                 border-color: #333;
             }

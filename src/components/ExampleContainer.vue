@@ -22,12 +22,14 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
+@import "@scss/constants.scss";
+
 .container {
     min-width: 100%;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 3rem 0.5rem;
 
     &__content {
         text-align: left;
@@ -52,11 +54,11 @@ const props = defineProps({
     }
 
     &.dark {
-        background-color: #1a1a1a;
+        background-color: $backgroundColor;
     }
 
     &.light {
-        background-color: #242424;
+        background-color: $secondaryBackgroundColor;
     }
 }
 
@@ -66,10 +68,10 @@ const props = defineProps({
         flex-direction: column-reverse;
         &__description {
             margin: 15px;
+        }
 
-            p {
-                font-size: calc(16px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
-            }
+        p {
+            font-size: calc(16px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
         }
     }
 }

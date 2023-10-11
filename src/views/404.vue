@@ -10,12 +10,15 @@
 </template>
 
 <style lang="scss" scoped>
+@import "@scss/constants.scss";
+
 .not-found {
-    background-color: #1a1a1a;
+    background-color: $backgroundColor;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px);
-    padding-bottom: 20%;
+    height: 100vh;
+    padding-bottom: 30%;
 }
 </style>
