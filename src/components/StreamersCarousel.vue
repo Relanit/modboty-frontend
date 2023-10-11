@@ -72,7 +72,11 @@ const totalChannels = formatChannels(channelsData.channelCount);
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
+* {
+    text-align: center;
+}
+
 .carousel-header {
     margin-top: 50px;
 }

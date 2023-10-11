@@ -46,6 +46,7 @@ const visible = ref(false);
 <style lang="scss">
 body {
     background-color: #242424;
+    text-align: center;
 }
 
 .navbar {

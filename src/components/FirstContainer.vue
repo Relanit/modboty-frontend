@@ -27,6 +27,7 @@ const props = defineProps({
     background-color: #242424;
     height: 40vh;
     font-size: 1.5rem;
+    text-align: center;
 
     &__logo {
         background: url("../assets/logo.svg") no-repeat;

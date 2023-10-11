@@ -1,12 +1,10 @@
 <template>
-    <TheHeading />
+    <TheNav />
     <router-view />
 </template>
 
 <script setup lang="ts">
-import TheHeading from "@components/TheHeading.vue";
-
-// @ is an alias to /src
+import TheNav from "@components/TheNav.vue";
 </script>
 
 <style lang="scss">
@@ -14,7 +12,6 @@ import TheHeading from "@components/TheHeading.vue";
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #e3e3e3;
 }
 
@@ -30,16 +27,13 @@ body::-webkit-scrollbar-thumb {
     background-color: #4a4a4a;
 }
 
-a,
-a:hover {
-    color: #78ba52;
-}
-
 a {
     text-decoration: none;
-}
+    color: #78ba52;
 
-a:hover {
-    text-decoration: underline;
+    &:hover {
+        color: #78ba52;
+        text-decoration: underline;
+    }
 }
 </style>
