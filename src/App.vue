@@ -9,4 +9,8 @@ import Nav from "@components/Nav.vue";
 
 <style lang="scss">
 @import "@scss/default.scss";
+
+#app {
+    background-color: #242424;
+}
 </style>

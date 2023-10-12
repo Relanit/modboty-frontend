@@ -26,7 +26,7 @@ const props = defineProps({
 
 .container {
     min-width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     display: flex;
     justify-content: center;
     padding: 3rem 0.5rem;
@@ -68,10 +68,6 @@ const props = defineProps({
         flex-direction: column-reverse;
         &__description {
             margin: 15px;
-        }
-
-        p {
-            font-size: calc(16px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
         }
     }
 }

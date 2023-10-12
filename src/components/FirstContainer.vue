@@ -32,12 +32,12 @@ const props = defineProps({
     text-align: center;
 
     .logo {
-        width: 300px;
+        width: 19em;
     }
 
     &__add-button {
         font-weight: 700;
-        font-size: 20px;
+        font-size: 1.25rem;
         background-color: $color;
         border-radius: 7px;
         border: none;
@@ -55,14 +55,13 @@ const props = defineProps({
         }
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
         .logo {
-            width: 220px;
+            width: 15em;
             min-height: 60px;
         }
 
         &__add-button {
-            font-size: 16px;
             padding: 7px 22px;
         }
     }

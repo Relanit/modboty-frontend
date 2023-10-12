@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Icon from "@/components/utility/Icon.vue";
 import Logo from "@base/Logo.vue";
 
 // import LoginButton from "@components/LoginButton.vue";
@@ -11,7 +12,7 @@ import Logo from "@base/Logo.vue";
                 <Logo class="logo" />
             </router-link>
             <button class="toggle-collapse">
-                <Icon icon="bars" />
+                <Icon icon="bars" size="xs" />
             </button>
         </div>
     </nav>
@@ -25,7 +26,7 @@ nav {
     top: 0;
     width: 100%;
     z-index: 100;
-    max-height: 7.5rem;
+    max-height: 4.5rem;
     min-height: 4.5rem;
     font-size: 1.25rem;
 }
@@ -38,23 +39,31 @@ nav > .nav-content {
     z-index: 1000;
     box-shadow: 0 1px 2px 0 #0000001a;
     background-color: $secondaryBackgroundColor;
+}
 
-    > .app-title > .logo {
-        width: 100px;
+.app-title {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+    .logo {
+        width: 7em;
+        margin-right: 0.25em;
     }
 }
 
 .toggle-collapse {
     display: none;
     background-color: transparent;
-    font-size: 2em;
+    font-size: 1.5em;
     color: inherit;
     border: 0.1em solid transparent;
-    padding: 0.5em;
-    border-radius: 0.5em;
+    padding: 0 0.4em;
+    margin-right: 0.3em;
+    border-radius: 0.3em;
     place-self: center;
     &:hover {
-        border-color: #303030;
+        border-color: $colorDarker;
     }
     &:active {
         background-color: #424242;

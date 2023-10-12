@@ -32,13 +32,13 @@ const props = defineProps({
     }
 
     &__name {
-        font-size: 30px;
+        font-size: 1.9rem;
         overflow-wrap: break-word;
         max-width: 250px;
     }
 
     &__followers {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 }
 

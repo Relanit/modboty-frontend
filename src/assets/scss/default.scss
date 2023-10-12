@@ -3,6 +3,13 @@ html {
     font-family: "Segoe UI", Roboto, sans-serif;
 }
 
+
+@media screen and (max-width: 650px) {
+	:root {
+		font-size: 0.8rem;
+	}
+}
+
 *,
 *:before,
 *:after {

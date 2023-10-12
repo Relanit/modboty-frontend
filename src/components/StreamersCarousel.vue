@@ -130,8 +130,8 @@ const totalChannels = formatChannels(channelsData.channelCount);
             color: $secondaryBackgroundColor;
             font-size: 2.4em;
             transition: all 0.4s, width 0.1s;
-            background-color: white;
-            border: 3px solid white;
+            background-color: $color;
+            border: 3px solid $color;
             border-radius: 50%;
 
             &:hover {
@@ -145,11 +145,11 @@ const totalChannels = formatChannels(channelsData.channelCount);
             }
         }
 
-        @media screen and (max-width: 500px) {
-            > svg {
-                font-size: 2em;
-            }
-        }
+        // @media screen and (max-width: 500px) {
+        //     > svg {
+        //         font-size: 2em;
+        //     }
+        // }
     }
 }
 </style>
