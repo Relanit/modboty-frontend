@@ -132,6 +132,6 @@ button, input, optgroup, select, textarea {
     line-height: inherit
 }
 
-[role=button] {
+[role=button], button {
     cursor: pointer
 }

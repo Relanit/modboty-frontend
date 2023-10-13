@@ -43,7 +43,7 @@ footer {
 
     > .socials {
         display: flex;
-        gap: 30px;
+        gap: 2em;
         flex-wrap: wrap;
 
         > a svg {

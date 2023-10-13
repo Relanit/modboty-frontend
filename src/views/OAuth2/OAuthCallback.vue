@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import OAuthContainer from "@components/OAuthContainer.vue";
+import OAuthContainer from "./OAuthContainer.vue";
 
 const authText = ref("Авторизация");
 
@@ -12,7 +12,7 @@ setInterval(() => {
 </script>
 
 <template>
-    <div class="oauth_container">
+    <div class="oauthContainer">
         <Suspense>
             <template #default>
                 <OAuthContainer />
@@ -29,7 +29,7 @@ setInterval(() => {
 
 <style lang="scss" scoped>
 @import "@scss/constants.scss";
-.oauth_container {
+.oauthContainer {
     background-color: $backgroundColor;
     display: flex;
     align-items: center;

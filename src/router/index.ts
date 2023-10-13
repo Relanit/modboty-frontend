@@ -4,7 +4,7 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: "/",
         name: "home",
-        component: () => import("@views/HomeView.vue"),
+        component: () => import("@views/home/Home.vue"),
         meta: {
             title: "Главная | ModBoty",
             description:
@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: "/auth",
         name: "auth",
-        component: () => import("@views/AuthView.vue"),
+        component: () => import("@views/OAuth2/Authorization.vue"),
         meta: {
             title: "Авторизация | ModBoty",
             description: "Получение доступа к дополнительным функциям ModBoty, модераторского бота для Twitch",
@@ -24,9 +24,9 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: "/oauth/callback",
         name: "OAuth2",
-        component: () => import("@views/OAuthCallbackView.vue"),
+        component: () => import("@views/OAuth2/OAuthCallback.vue"),
         meta: {
-            title: "OAuth callback | ModBoty",
+            title: "OAuth2 callback | ModBoty",
         },
     },
     {

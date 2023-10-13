@@ -59,6 +59,12 @@ switch (result.value) {
 <template>
     <div>
         <h1>{{ message }}</h1>
-        <img src="@img/ppStretch.gif" alt="ppStretch" />
+        <img src="@img/ppStretch.gif" alt="ppStretch" class="ppStretch" />
     </div>
 </template>
+
+<style scoped lang="scss">
+.ppStretch {
+    width: 15em;
+}
+</style>

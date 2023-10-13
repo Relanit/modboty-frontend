@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ExampleContainer from "@components/ExampleContainer.vue";
-import FirstContainer from "@components/FirstContainer.vue";
 import Footer from "@components/Footer.vue";
-import StreamersCarousel from "@components/StreamersCarousel.vue";
+import ExampleContainer from "./ExampleContainer.vue";
+import FirstContainer from "./FirstContainer.vue";
+import StreamersCarousel from "./StreamersCarousel.vue";
 import stvSrc from "@img/7tv.gif";
 import commandsSrc from "@img/commands.gif";
 import predictionSrc from "@img/predictions.gif";

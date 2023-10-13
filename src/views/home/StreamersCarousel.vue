@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import Icon from "@components/utility/Icon.vue";
 import StreamerCard from "./StreamerCard.vue";
-import Icon from "./utility/Icon.vue";
 import axios from "axios";
 import { register } from "swiper/element/bundle";
 
@@ -87,13 +87,12 @@ const totalChannels = formatChannels(channelsData.channelCount);
 
 .main {
     background-color: $secondaryBackgroundColor;
-    padding: 50px 0;
+    padding: 3em 0;
 }
 
 .carousel {
     display: flex;
     justify-content: center;
-    height: 250px;
 
     &__wrapper {
         display: flex;
@@ -115,7 +114,7 @@ const totalChannels = formatChannels(channelsData.channelCount);
             }
 
             > swiper-slide {
-                height: 270px;
+                min-height: 270px;
                 display: flex;
                 justify-content: center;
             }
@@ -144,12 +143,6 @@ const totalChannels = formatChannels(channelsData.channelCount);
                 font-size: 1.6em;
             }
         }
-
-        // @media screen and (max-width: 500px) {
-        //     > svg {
-        //         font-size: 2em;
-        //     }
-        // }
     }
 }
 </style>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCookie } from "vue-cookie-next";
-import Icon from "./utility/Icon.vue";
+import Icon from "./Icon.vue";
 import axios from "axios";
 
 function getOAuth2URL() {
@@ -26,10 +26,7 @@ async function loginTwitch() {
 </script>
 
 <template>
-    <button class="login-button" @click="loginTwitch">
-        <Icon icon="twitch" lib="fab" />
-        <span>Войти</span>
-    </button>
+    <button class="login-button" @click="loginTwitch"><Icon icon="twitch" lib="fab" />Войти</button>
 </template>
 
 <style scoped lang="scss">
@@ -38,14 +35,14 @@ async function loginTwitch() {
     background-color: rgba($color: #000000, $alpha: 0);
     font-weight: 700;
     color: $color;
-    border-radius: 7px;
-    padding: 4px 10px;
+    border-radius: 0.35em;
+    padding: 0.2em 0.45em;
     transition: all 0.3s;
     border: 2px solid $colorDarker;
     transition: all 0.3s;
 
     > svg {
-        margin-right: 4px;
+        margin-right: 0.2em;
     }
 
     &:hover {
@@ -54,7 +51,7 @@ async function loginTwitch() {
     }
 
     &:active {
-        background-color: $colorDarker;
+        background-color: #424242;
     }
 }
 </style>

@@ -39,10 +39,10 @@ const props = defineProps({
         font-weight: 700;
         font-size: 1.25rem;
         background-color: $color;
-        border-radius: 7px;
+        border-radius: 0.45em;
         border: none;
-        padding: 7px 30px;
-        margin-top: 20px;
+        padding: 0.45em 1.3em;
+        margin-top: 1.1em;
         transition: background-color 0.3s;
 
         &:hover {
@@ -59,10 +59,6 @@ const props = defineProps({
         .logo {
             width: 15em;
             min-height: 60px;
-        }
-
-        &__add-button {
-            padding: 7px 22px;
         }
     }
 }
