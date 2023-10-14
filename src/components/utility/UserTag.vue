@@ -27,13 +27,7 @@ const userTag = ref<HTMLElement | null>(null);
 @import "@scss/constants.scss";
 
 .user-tag {
-    display: inline-block;
-    vertical-align: middle;
-
     cursor: inherit;
-    &[clickable="true"] {
-        cursor: pointer;
-    }
 
     .user-picture-wrapper > img {
         vertical-align: middle;
@@ -46,10 +40,10 @@ const userTag = ref<HTMLElement | null>(null);
         margin-right: calc(v-bind(scale) * 0.15);
         text-indent: calc(v-bind(scale) * 2);
 
-        &[suspense="true"] {
-            border: 0.25em solid currentColor;
-            opacity: 0.05;
-        }
+        // &[suspense="true"] {
+        //     border: 0.25em solid currentColor;
+        //     opacity: 0.05;
+        // }
     }
 
     [loading="true"] {
@@ -71,9 +65,5 @@ const userTag = ref<HTMLElement | null>(null);
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-}
-.user-card-popper {
-    position: absolute;
-    z-index: 100;
 }
 </style>

@@ -46,7 +46,7 @@ watch(route, () => {
                         <LoginButton />
                     </div>
                     <router-link v-if="actorUser" class="unstyled-link nav-link" :to="'/users/' + actorUser.id">
-                        <UserTag :user="actorUser" scale="2em"></UserTag>
+                        <UserTag :user="actorUser" scale="2.4em"></UserTag>
                     </router-link>
                 </div>
             </div>
