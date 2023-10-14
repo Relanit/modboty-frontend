@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import Icon from "@components/utility/Icon.vue";
 import StreamerCard from "./StreamerCard.vue";
-import axios from "axios";
+import { axiosClient } from "@/axios";
 import { register } from "swiper/element/bundle";
 
 register();
 
-const channelsData = await axios.get(`${import.meta.env.VITE_APP_API}/channels`).then((response) => {
+const channelsData = await axiosClient.get("/channels").then((response) => {
     return response.data;
 });
 

@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { useStore } from "@store/main";
 import Nav from "@components/Nav.vue";
+import { setupActor } from "@/ActorLogic";
 import { storeToRefs } from "pinia";
 
 const store = useStore();
-const { navOpen } = storeToRefs(store);
+const { isAuthenticated, navOpen } = storeToRefs(store);
+
+setupActor(isAuthenticated);
 </script>
 
 <template>

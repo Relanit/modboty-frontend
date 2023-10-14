@@ -2,7 +2,10 @@
 import { ref } from "vue";
 import { useCookie } from "vue-cookie-next";
 import { useRoute } from "vue-router";
-import axios from "axios";
+import { useStore } from "@/store/main";
+import { axiosClient } from "@/axios";
+
+const store = useStore();
 
 const route = useRoute();
 const code = route.query.code;
@@ -20,12 +23,8 @@ async function twitchOAuth2() {
     }
     cookie.removeCookie("intent");
 
-    result.value = await axios
-        .post(
-            `${import.meta.env.VITE_APP_API}/oauth/${intent}`,
-            { code: code, state: state },
-            { withCredentials: true },
-        )
+    result.value = await axiosClient
+        .post(`/oauth/${intent}`, { code: code, state: state })
         .then((response) => response.data["success"])
         .catch((error) => error["response"]["data"]["detail"])
         .catch((error) => error);
@@ -42,6 +41,7 @@ switch (result.value) {
         message.value = "Авторизация прошла успешно";
         break;
     case undefined:
+        store.setAuthenticated(true);
         message.value = "Вы вошли";
         break;
     case "1":

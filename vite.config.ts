@@ -19,6 +19,7 @@ export default ({ mode }) => {
                 "@scss": resolve(__dirname, "src/assets/scss"),
                 "@components": resolve(__dirname, "src/components"),
                 "@base": resolve(__dirname, "src/components/base"),
+                "@structures": resolve(__dirname, "src/structures"),
                 "@views": resolve(__dirname, "src/views"),
                 "@img": resolve(__dirname, "src/assets/img"),
             },

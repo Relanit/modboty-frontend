@@ -21,6 +21,7 @@
             "@scss/*": ["src/assets/scss/*"],
             "@components/*": ["src/components/*"],
             "@base/*": ["src/components/base/*"],
+            "@structures/*": ["src/structures/*"],
             "@img/*": ["src/assets/img/*"],
             "@views/*": ["src/views/*"]
         },

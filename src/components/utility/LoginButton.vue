@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { useCookie } from "vue-cookie-next";
 import Icon from "./Icon.vue";
-import axios from "axios";
+import { axiosClient } from "@/axios";
 
 function getOAuth2URL() {
-    return axios
-        .get(`${import.meta.env.VITE_APP_API}/oauth/url`, {
-            withCredentials: true,
-        })
+    return axiosClient
+        .get("/oauth/url")
         .then((response) => {
             return response.data;
         })

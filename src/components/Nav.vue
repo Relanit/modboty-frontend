@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { watch } from "vue";
 import { useRoute } from "vue-router";
+import { useActor } from "@store/actor";
 import { useStore } from "@store/main";
+import UserTag from "@/components/utility/UserTag.vue";
 import Icon from "@components/utility/Icon.vue";
 import LoginButton from "@components/utility/LoginButton.vue";
 import Logo from "@base/Logo.vue";
+import { storeToRefs } from "pinia";
 
 const store = useStore();
+const { user: actorUser } = storeToRefs(useActor());
 const route = useRoute();
 
 const toggleNav = () => {
@@ -38,9 +42,12 @@ watch(route, () => {
                     <div>
                         <a href="https://www.donationalerts.com/r/relanit" class="nav-link">Поддержать разработчика</a>
                     </div>
-                    <div class="login">
+                    <div v-if="actorUser === null" class="login">
                         <LoginButton />
                     </div>
+                    <router-link v-if="actorUser" class="unstyled-link nav-link" :to="'/users/' + actorUser.id">
+                        <UserTag :user="actorUser" scale="2em"></UserTag>
+                    </router-link>
                 </div>
             </div>
         </div>

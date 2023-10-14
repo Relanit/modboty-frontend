@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { useCookie } from "vue-cookie-next";
-import axios from "axios";
+import { axiosClient } from "@/axios";
 
 function getOAuth2URL() {
-    return axios
-        .get(`${import.meta.env.VITE_APP_API}/oauth/url`, {
-            withCredentials: true,
-        })
-        .then((response) => {
-            return response.data;
-        });
+    return axiosClient.get("/oauth/url").then((response) => {
+        return response.data;
+    });
 }
 
 async function authorizeTwitch() {
