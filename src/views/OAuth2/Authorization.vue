@@ -15,6 +15,6 @@ async function authorizeTwitch() {
 }
 
 const cookie = useCookie();
-cookie.setCookie("intent", "authorize");
+cookie.setCookie("intent", "authorize", { domain: ".modboty.com" });
 await authorizeTwitch();
 </script>
