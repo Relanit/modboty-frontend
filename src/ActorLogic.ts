@@ -1,6 +1,6 @@
 import { Ref, watch } from "vue";
-import { useActor } from "@store/actor";
-import { axiosClient } from "@/axios";
+import { useActor } from "../../modboty-frontend/src/store/actor";
+import { axiosClient } from "../../modboty-frontend/src/axios";
 
 export async function setupActor(isAuthenticated: Ref<boolean | null>) {
     const actor = useActor();

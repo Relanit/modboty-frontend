@@ -14,7 +14,7 @@ const props = defineProps({
             <Logo class="logo" />
             <h2>{{ props.msg }}</h2>
             <button class="first-container__add-button" v-if="props.home">
-                <a href="https://docs.modbot.xyz/install">Добавить бота</a>
+                <a href="https://docs.modboty.com/install">Добавить бота</a>
             </button>
         </div>
     </div>

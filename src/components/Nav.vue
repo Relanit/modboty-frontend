@@ -5,7 +5,6 @@ import { useActor } from "@store/actor";
 import { useStore } from "@store/main";
 import UserTag from "@/components/utility/UserTag.vue";
 import Icon from "@components/utility/Icon.vue";
-import LoginButton from "@components/utility/LoginButton.vue";
 import Logo from "@base/Logo.vue";
 import { storeToRefs } from "pinia";
 
@@ -37,15 +36,16 @@ watch(route, () => {
                         <router-link to="/" class="nav-link">Главная</router-link>
                     </div>
                     <div>
-                        <a href="https://docs.modbot.xyz" class="nav-link">Команды</a>
+                        <a href="https://docs.modboty.com" class="nav-link">Команды</a>
                     </div>
                     <div>
                         <a href="https://www.donationalerts.com/r/relanit" class="nav-link">Поддержать разработчика</a>
                     </div>
-                    <div v-if="actorUser === null" class="login">
-                        <LoginButton />
-                    </div>
-                    <router-link v-if="actorUser" class="unstyled-link nav-link" :to="'/users/' + actorUser.id">
+                    <router-link
+                        v-if="actorUser"
+                        class="unstyled-link nav-link"
+                        :to="'/dashboard/' + actorUser.username"
+                    >
                         <UserTag :user="actorUser" scale="2.4em"></UserTag>
                     </router-link>
                 </div>

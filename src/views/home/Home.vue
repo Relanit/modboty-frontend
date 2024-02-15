@@ -39,7 +39,7 @@ import vipsSrc from "@img/vips.gif";
         />
         <ExampleContainer
             :dark="true"
-            title="А также управление ставками, банфразы и <a href='https://docs.modbot.xyz'>многое другое</a>"
+            title="А также управление ставками, банфразы и <a href='https://docs.modboty.com'>многое другое</a>"
             :img="predictionSrc"
         />
         <Suspense>
